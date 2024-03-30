@@ -22,9 +22,9 @@ void merge(Person *array, int start, int middle, int end) {
     Person array_right[size_right];
 
     int index_i, index_j, index_k;
-    for (int index_i = 0; index_i < size_left; index_i++) 
+    for (index_i = 0; index_i < size_left; index_i++) 
         array_left[index_i] = array[start + index_i];
-    for (int index_j = 0; index_j < size_right; index_j++)
+    for (index_j = 0; index_j < size_right; index_j++)
         array_right[index_j] = array[middle+1+index_j];
 
     index_i = index_j = 0;
