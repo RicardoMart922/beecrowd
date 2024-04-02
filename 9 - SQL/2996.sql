@@ -40,3 +40,11 @@ insert into packages (id_package,id_user_sender,id_user_receiver,color,year) val
 /*  Execute this query to drop the tables */
 -- DROP TABLE packages;
 -- DROP TABLE users;
+
+/* Solution */
+SELECT year, sender.name AS sender, receiver.name AS receiver
+FROM packages
+LEFT JOIN users AS sender ON id_user_sender = sender.id
+LEFT JOIN users AS receiver ON id_user_receiver = receiver.id
+WHERE (color = 'blue' OR year > 2014) AND sender.address <> 'Taiwan' AND receiver.address <> 'Taiwan' 
+ORDER BY year DESC, id_package DESC;
